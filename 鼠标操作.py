@@ -1,6 +1,6 @@
 #coding=utf-8
 from selenium import  webdriver
-from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.action_chains import ActionChains   /*selenium中需要加入 from selenium.webdriver.common.action_chains import ActionChains 库*/
 br=webdriver.Chrome()
 # br.get("https://www.baidu.com")
 #基础操作
@@ -16,9 +16,9 @@ br=webdriver.Chrome()
 # target=br.find_element_by_link_text("设置")
 # ActionChains(br).drag_and_drop(source,target).perform()
 #拖拽2
-br.get("https://www.runoob.com/try/try.php?filename=jqueryui-api-droppable")
+br.get("https://www.runoob.com/try/try.php?filename=jqueryui-api-droppable")    
 br.maximize_window()
-br.switch_to.frame('iframeResult')
+br.switch_to.frame('iframeResult')            /*实行拖拽功能时有时候会遇到盒子框架，这时需要先进入盒子内才能对元素进行操作*/
 source=br.find_element_by_id("draggable")
 target=br.find_element_by_id("droppable")
 actions=ActionChains(br)
